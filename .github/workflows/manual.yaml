@@ -11,8 +11,8 @@ on:
         requiredc: true
         # 説明
         description: A cheerful word
-  jobs:
-    run:
-      runs-on: ubuntu-latest
-      steps:
-      - run: echo "${{inputs.greetings}}"
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "${{inputs.greetings}}"
