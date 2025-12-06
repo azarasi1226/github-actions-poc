@@ -1,0 +1,18 @@
+name: Manual
+on:
+  workflow_dispatch:
+  inputs:
+    greeting:
+      # 型
+      type: string
+      # デフォルト値
+      default: Hello
+      # 必須フラグ (デフォルト指定して、これ指定する意味あるんか？)
+      requiredc: true
+      # 説明
+      description: A cheerful word
+  jobs:
+    run:
+      runs-on: ubuntu-latest
+      steps:
+      - run: echo "${{inputs.greetings}}"
