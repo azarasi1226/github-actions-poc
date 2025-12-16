@@ -4,4 +4,8 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
+     # https://docs.github.com/ja/actions/reference/workflows-and-actions/contexts
+     # ↑公式のコンテキストリファレンス
       - run: echo "actor - ${{github.actor}}"
+      - run: echo "os - ${{runner.os}}"
+      - run: echo "event - ${{github.event}}"
