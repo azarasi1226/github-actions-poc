@@ -9,7 +9,9 @@ jobs:
       JOB_LEVEL_ENV: ジョブレベルの環境変数
       BRANCH_NAME: main
     steps:
+      # これはシェルスクリプトの書き方。コマンドの結果ログの時点で展開される。
       - run: echo ${JOB_LEVEL_ENV}
+      # この書き方だと、コマンドのログの時点で展開されてる。
       - run: echo ${{env.JOB_LEVEL_ENV}}
       - uses: actions/checkout@v4
         with:

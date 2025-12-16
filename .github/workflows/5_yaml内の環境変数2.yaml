@@ -1,0 +1,14 @@
+name: Override yaml Environment Variables
+on: push
+env:
+  EXAMPLE: 初期値だよ
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      EXAMPLE: ジョブレベルで上書きしたよ
+    steps:
+      - run: echo ${EXAMPLE}
+      - run: echo ${EXAMPLE}
+        env: 
+          EXAMPLE: ステップレベルでさらに上書きしたよ
