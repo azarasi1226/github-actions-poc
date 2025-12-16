@@ -10,6 +10,9 @@ jobs:
       BRANCH_NAME: main
     steps:
       - run: echo ${JOB_LEVEL_ENV}
+      - run: echo ${{env.JOB_LEVEL_ENV}}
       - uses: actions/checkout@v4
         with:
-          ref: ${BRANCH_NAME}
+         # yamlというかgithub actionsではシェルのように環境変数の展開が使えない
+         # だからめんどいけど、こうやって参照する
+          ref: ${{env.RANCH_NAME}}
