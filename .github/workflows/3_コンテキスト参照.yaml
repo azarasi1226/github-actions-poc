@@ -8,4 +8,5 @@ jobs:
      # ↑公式のコンテキストリファレンス
       - run: echo "actor - ${{github.actor}}"
       - run: echo "os - ${{runner.os}}"
+      # eventはオブジェクト形式になるので、push とかのイベントごとに中身が異なる。
       - run: echo "event - ${{github.event}}"

@@ -1,0 +1,15 @@
+name: yaml Environment Variables
+on: push
+env:
+  GLOBAL_ENV: グローバルレベルの環境変数
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      JOB_LEVEL_ENV: ジョブレベルの環境変数
+      BRANCH_NAME: main
+    steps:
+      - run: echo ${JOB_LEVEL_ENV}
+      - uses: actions/checkout@v4
+       with:
+       ref: ${BRANCH_NAME}
