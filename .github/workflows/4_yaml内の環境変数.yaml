@@ -11,5 +11,5 @@ jobs:
     steps:
       - run: echo ${JOB_LEVEL_ENV}
       - uses: actions/checkout@v4
-       with:
-        ref: ${BRANCH_NAME}
+        with:
+          ref: ${BRANCH_NAME}
