@@ -9,4 +9,4 @@ jobs:
       ACTOR2: "foo bar"
     steps:
       - run: echo "${ACTOR}"
-      - urn: echo ${ACTOR2
+      - run: echo ${ACTOR2
