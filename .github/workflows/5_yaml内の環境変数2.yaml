@@ -5,10 +5,13 @@ env:
 jobs:
   run:
     runs-on: ubuntu-latest
+    # オーバーライドは、スコープが狭いところが優先されるっぽい。でも使うのかこれ？
     env:
       EXAMPLE: ジョブレベルで上書きしたよ
     steps:
       - run: echo ${EXAMPLE}
       - run: echo ${EXAMPLE}
+       # ステップレベルの環境変数の書き方,なんか定義と処理が上下してキモイな
         env: 
           EXAMPLE: ステップレベルでさらに上書きしたよ
+      - run: echo ${EXAMPLE}
