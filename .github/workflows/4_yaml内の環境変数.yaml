@@ -12,4 +12,4 @@ jobs:
       - run: echo ${JOB_LEVEL_ENV}
       - uses: actions/checkout@v4
        with:
-       ref: ${BRANCH_NAME}
+        ref: ${BRANCH_NAME}
