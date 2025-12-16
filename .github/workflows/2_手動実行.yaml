@@ -1,6 +1,8 @@
 name: Manual
+# ONの下にworkflow_dispatchを指定すると手動実行
 on:
   workflow_dispatch:
+    # 手動実行する際のパラメーター
     inputs:
       greeting:
         # 型

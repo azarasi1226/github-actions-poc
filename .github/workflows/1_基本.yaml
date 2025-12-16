@@ -1,8 +1,11 @@
+# ワークフロー名
 name: Hello
+# イベント
 on: push
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
     - run: echo "Hello, world!"
+    # アクションとかいう再利用可能なコンポーネント
     - uses: actions/checkout@v4
