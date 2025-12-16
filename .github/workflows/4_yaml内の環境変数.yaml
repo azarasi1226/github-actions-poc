@@ -18,3 +18,5 @@ jobs:
          # yamlというかgithub actionsではシェルのように環境変数の展開が使えない
          # だからめんどいけど、こうやって参照する
           ref: ${{env.RANCH_NAME}}
+      # こんな感じでデフォルトの環境変数も用意されてるよ
+      - run: echo ${GITHBU_ACTOR}

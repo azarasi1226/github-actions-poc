@@ -1,0 +1,12 @@
+name: yaml Environment Variables 3
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      # 一度コンテキストを中間環境変数にしてから↓で使うのが安全な書き方っぽい
+      ACTOR: ${{github.actor}}
+      ACTOR2: "foo bar"
+    steps:
+      - run: echo "${ACTOR}"
+      - urn: echo ${ACTOR2
