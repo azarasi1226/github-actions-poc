@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # 一度コンテキストを中間環境変数にしてから↓で使うのが安全な書き方っぽい
+      # コンテキスト、リポジトリレベルの環境変数など外部から渡す値はいったん子kで中間変数にした方がいいらしい。
       ACTOR: ${{github.actor}}
       ACTOR2: "foo bar"
     steps:

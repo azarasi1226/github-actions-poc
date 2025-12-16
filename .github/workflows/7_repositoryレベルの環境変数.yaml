@@ -1,0 +1,9 @@
+name: Repository Level Environment Variables
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      REPO_LEVEL_ENV: ${{vars.REPOSITORYENV}}
+    steps:
+      - run: echo ${REPO_LEVEL_ENV}
