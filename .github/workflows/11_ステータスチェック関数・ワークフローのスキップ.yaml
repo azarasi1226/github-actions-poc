@@ -7,6 +7,12 @@ jobs:
       # 普通だったらこの時点で即終了
       - run: exit 1
       # でもステータスチェック関数があるおかげで下の行も実行される。
+      # 必ずifキーとセットで使用しないといけない。
       # よくある使い方としては、失敗時にも通知するみたいな感じ。 
       - run: echo "Hello"
         if: ${{failure()}}
+  skip:
+    runs-on: ubuntu-latest
+    if: ${{github.actor != 'azarasi1226'}}
+    steps:
+      - run: echo "マジすか？"
