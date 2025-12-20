@@ -1,6 +1,6 @@
 name: 13_ネーミング2
 # ワークステーションの実行名(トプレベルのログのタイトル)には例外的にコンテキストが使える
-run-name: Run by @{{github.actor}} 
+run-name: Run by @${{github.actor}} 
 on: push
 jobs:
   run:
