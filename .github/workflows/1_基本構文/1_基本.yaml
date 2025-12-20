@@ -1,6 +1,6 @@
 # ワークフロー名
-name: Hello
-# イベント
+name: 基本
+# 起動イベント
 on: push
 jobs:
   hello:
