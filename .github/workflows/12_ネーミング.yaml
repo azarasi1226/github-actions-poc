@@ -1,14 +1,12 @@
 name: 12_ネーミング
 on: push
 jobs:
+  # ここのジョブ名はアルファベットしか使えない。日本語にするには↓のようにする
   run:
     # run とこのnameでつけてるのって何が違うんや？
+    # →　依存関係とかジョブ間での参照に使うのが "run"で "ジョブ名"は表示用の名前らしい
     name: ジョブ名
     runs-on: ubuntu-latest
     steps:
       - run: echo "ネーミングの確認"
         name: ステップ名
-  ジョブジョブ:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "ジョブ名を日本語にしてみた"
