@@ -3,6 +3,7 @@ on: pull_request
 jobs:
   comment:
     runs-on: ubuntu-latest
+    # permissions: read-all, write-all みたいな一括指定方法もある。
     permissions:
       #プルリクエストへの書き込みを許可
       pull-requests: write
