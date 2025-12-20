@@ -1,7 +1,7 @@
-name: Context Reference
+name: 3_コンテキスト参照
 on: push
 jobs:
-  print:
+  run:
     runs-on: ubuntu-latest
     steps:
      # https://docs.github.com/ja/actions/reference/workflows-and-actions/contexts
@@ -9,4 +9,4 @@ jobs:
       - run: echo "actor - ${{github.actor}}"
       - run: echo "os - ${{runner.os}}"
       # eventはオブジェクト形式になるので、push とかのイベントごとに中身が異なる。
-      - run: echo "event - ${{github.event}}"
+      - run: echo "event - ${{toJSON(github.event)}}"

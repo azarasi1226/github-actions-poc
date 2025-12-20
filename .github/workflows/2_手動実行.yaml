@@ -1,4 +1,4 @@
-name: Manual
+name: 2_手動実行
 # ONの下にworkflow_dispatchを指定すると手動実行
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
       greeting:
         # 型
         type: string
-        # デフォルト値
+        # デフォルト値 (入力されてる値を消して実行してもこの値が入っていた)
         default: Hello
         # 必須フラグ (デフォルト指定して、これ指定する意味あるんか？)
         requiredc: true

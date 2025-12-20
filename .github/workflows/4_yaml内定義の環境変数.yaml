@@ -1,0 +1,24 @@
+name: 4_yaml内定義の環境変数
+on: push
+# ワークフローレベルの環境変数
+env:
+  GLOBAL_ENV: グローバルレベルの環境変数
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    # ジョブレベルの環境変数
+    env:
+      JOB_LEVEL_ENV: ジョブレベルの環境変数
+      BRANCH_NAME: main
+    steps:
+      # これはシェルスクリプトの書き方。コマンドの"結果ログ"の時点で展開される。
+      - run: echo ${JOB_LEVEL_ENV}
+      # この書き方だと、コマンドログの時点でもコマンド結果でも展開されてる。
+      - run: echo ${{env.JOB_LEVEL_ENV}}
+      - uses: actions/checkout@v4
+        with:
+         # github actionsではシェルのように環境変数の展開はどこでも使えない
+         # だからめんどいけど、基本はこうやって参照する
+          ref: ${{env.BRANCH_NAME}}
+      # こんな感じでデフォルトの環境変数も用意されてるよ
+      - run: echo ${GITHUB_ACTOR}

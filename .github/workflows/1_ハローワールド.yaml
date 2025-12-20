@@ -1,11 +1,12 @@
 # ワークフロー名
-name: 基本
+name: 1_ハローワールド
 # 起動イベント
 on: push
 jobs:
+  # ジョブ名
   hello:
     runs-on: ubuntu-latest
     steps:
     - run: echo "Hello, world!"
-    # アクションとかいう再利用可能なコンポーネント
+    # "Action" という再利用可能な関数的な機能
     - uses: actions/checkout@v4

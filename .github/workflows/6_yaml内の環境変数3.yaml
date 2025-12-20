@@ -1,4 +1,4 @@
-name: yaml Environment Variables 3
+name: 6_yaml内定義の環境変数3
 on: push
 jobs:
   print:

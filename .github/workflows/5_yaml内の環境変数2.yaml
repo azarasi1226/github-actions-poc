@@ -1,11 +1,11 @@
-name: Override yaml Environment Variables
+name: 5_yaml内定義の環境変数2
 on: push
 env:
   EXAMPLE: 初期値だよ
 jobs:
   run:
     runs-on: ubuntu-latest
-    # オーバーライドは、スコープが狭いところが優先されるっぽい。でも使うのかこれ？
+    # オーバーライドは、スコープが狭いところが優先される
     env:
       EXAMPLE: ジョブレベルで上書きしたよ
     steps:
