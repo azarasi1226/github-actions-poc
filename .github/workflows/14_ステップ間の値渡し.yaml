@@ -1,0 +1,15 @@
+name: 14_ステップ間の値渡し
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ステップ1で値を設定
+        id: step1
+        # GITHUB_OUTPUTという特殊なファイルに書き込む
+        run: echo "result=これステップ1のデータね" >> "${GITHUB_OUTPUT}"
+      
+      - name: ステップ2で値を参照
+        # 参照するときはこんな感じ
+        run: |
+          echo "${{steps.step1.outputs.result}}"
