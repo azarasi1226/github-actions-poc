@@ -1,0 +1,18 @@
+name: ステータスチェック関数・ワークフローのスキップ.yaml
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      # 普通だったらこの時点で即終了
+      - run: exit 1
+      # でもステータスチェック関数があるおかげで下の行も実行される。
+      # よくある使い方としては、失敗時にも通知するみたいな感じ。 
+      - run: echo "Hello"
+        if: ${{failure()}}
+
+      # 下の行もすべて実行される
+      - run: echo "success- ${{success()}}"
+      - run: echo "failure- ${{failure()}}"
+      - run: echo "always- ${{always()}}"
+      - run: echo "cancelled- ${{cancelled()}}"
