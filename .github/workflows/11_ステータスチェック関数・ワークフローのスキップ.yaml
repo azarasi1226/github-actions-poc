@@ -12,7 +12,7 @@ jobs:
         if: ${{failure()}}
 
       # 下の行もすべて実行される
-      # - run: echo "success- ${{success()}}"
+      - run: echo success- "${{success()}}"
       # - run: echo "failure- ${{failure()}}"
       # - run: echo "always- ${{always()}}"
       # - run: echo "cancelled- ${{cancelled()}}"
