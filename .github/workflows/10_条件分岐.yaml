@@ -6,3 +6,4 @@ jobs:
     steps:
       - run: echo "これは初回の実行です"
         if: ${{ github.run_number == 1 }}
+      - run: echo "これは2回目以降の実行です"
