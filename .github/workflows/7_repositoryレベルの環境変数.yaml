@@ -1,4 +1,4 @@
-name: repositoryレベルの環境変数
+name: 7_repositoryレベルの環境変数
 on: push
 jobs:
   run:
@@ -6,5 +6,7 @@ jobs:
     env:
       # 中間環境変数にして安全にする
       REPO_LEVEL_ENV: ${{vars.REPOSITORYENV}}
+      REPO_LEVEL_ENV2: ${{vars.NOT_EXISTING_ENV_VAR}}
     steps:
       - run: echo "${REPO_LEVEL_ENV}"
+      - run: echo "${REPO_LEVEL_ENV2}"
