@@ -1,0 +1,10 @@
+name: 9_ファイルハッシュ関数.yaml
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "${HASH}"
+        env:
+          HASH: ${{hashFiles('.gihub/workflows/1_ハローワールド.yaml')}}
