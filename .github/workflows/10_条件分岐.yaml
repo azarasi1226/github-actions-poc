@@ -4,5 +4,5 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "これは偶数回目の実行です"
-        if: ${{ github.run_number % 2 == 0 }}
+      - run: echo "これは初回の実行です"
+        if: ${{ github.run_number == 1 }}
