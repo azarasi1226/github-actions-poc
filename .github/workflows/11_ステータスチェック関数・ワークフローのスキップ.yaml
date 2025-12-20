@@ -10,9 +10,3 @@ jobs:
       # よくある使い方としては、失敗時にも通知するみたいな感じ。 
       - run: echo "Hello"
         if: ${{failure()}}
-
-      # 下の行もすべて実行される
-      - run: echo success- "${{success()}}"
-      # - run: echo "failure- ${{failure()}}"
-      # - run: echo "always- ${{always()}}"
-      # - run: echo "cancelled- ${{cancelled()}}"
