@@ -1,4 +1,4 @@
-name: ステータスチェック関数・ワークフローのスキップ.yaml
+name: 11_ステータスチェック関数・ワークフローのスキップ.yaml
 on: push
 jobs:
   run:
@@ -13,6 +13,7 @@ jobs:
         if: ${{failure()}}
   skip:
     runs-on: ubuntu-latest
+    # jobの段階でスキップもできる。これやると、時間が加算されないから一番コスト削減できる。
     if: ${{github.actor != 'azarasi1226'}}
     steps:
       - run: echo "マジすか？"

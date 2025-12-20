@@ -1,0 +1,10 @@
+name: 12_ネーミング
+on: push
+jobs:
+  run:
+    # run とこのnameでつけてるのって何が違うんや？
+    name: ジョブ名
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ネーミングの確認"
+        name: ステップ名
