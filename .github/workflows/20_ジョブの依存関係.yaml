@@ -18,7 +18,7 @@ jobs:
       - run: echo "firstとsecondジョブの後に実行されます"
   # 最後に実行される
   fourth:
-    needs: [thrid]
+    needs: [third]
     runs-on: ubuntu-latest
     steps:
       - run: echo "thirdジョブの後に実行されます"
