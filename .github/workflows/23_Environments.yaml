@@ -1,6 +1,5 @@
 name: 23_Environments
 on:
-  push:
   workflow_dispatch:
     inputs:
       environment:
@@ -13,7 +12,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     # 環境の切り替えはここで行う
-    environment: ${{inputs.environment-name}}
+    environment: ${{inputs.environment}}
     env:
       USERNAME: ${{vars.USERNAME}}
       PASSWORD: ${{secrets.PASSWORD}}
