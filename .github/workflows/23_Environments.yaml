@@ -1,0 +1,19 @@
+name: 23_Environments
+on:
+  workflow_dispatch:
+  inputs:
+    environment-name:
+     # typeがenvironmentだと、存在する環境セットしか出てこなくなる。
+      type: environment
+      description: '対象環境'
+      required: true
+      default: 'test'
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{vars.USERNAME}}
+      PASSWORD: ${{secrets.PASSWORD}}
+    steps:
+      - run: echo "userName- ${USERNAME}"
+      - run: echo "password- ${PASSWORD}"
