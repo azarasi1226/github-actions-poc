@@ -11,6 +11,8 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    # 環境の切り替えはここで行う
+    environment: ${{inputs.environment-name}}
     env:
       USERNAME: ${{vars.USERNAME}}
       PASSWORD: ${{secrets.PASSWORD}}
