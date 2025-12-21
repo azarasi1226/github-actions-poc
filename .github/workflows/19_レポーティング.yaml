@@ -14,8 +14,9 @@ jobs:
   run2:
     runs-on: ubuntu-latest
     steps:
-      - run: | # マークダウンによる出力
-        echo "## ExampleTitle :rocket:" >> "${GITHUB_STEP_SUMMARY}"
-        echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
-        echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
+      - name: "サマリー"
+        run: | # マークダウンによる出力
+          echo "## ExampleTitle :rocket:" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
 
