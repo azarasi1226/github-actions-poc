@@ -1,5 +1,6 @@
 name: 23_Environments
 on:
+ # !バカハマった。 デフォルトブランチじゃないとworkflow_dispatchは使えないらしい。
   workflow_dispatch:
     # 手動実行する際のパラメーター
     inputs:
