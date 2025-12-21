@@ -1,6 +1,6 @@
 name: 18_ロググループ・ログマスク
 on: push
-josbs:
+jobs:
   run:
     runs-on: ubuntu-latest
     steps:
