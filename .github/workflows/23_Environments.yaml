@@ -3,15 +3,15 @@ on:
   workflow_dispatch:
     # 手動実行する際のパラメーター
     inputs:
-      greeting:
+      environment:
         # 型
-        type: string
+        type: environment
         # デフォルト値 (入力されてる値を消して実行してもこの値が入っていた)
-        default: Hello
+        default: test
         # 必須フラグ (デフォルト指定して、これ指定する意味あるんか？)
         required: true
         # 説明
-        description: A cheerful word
+        description: 環境
 jobs:
   run:
     runs-on: ubuntu-latest
