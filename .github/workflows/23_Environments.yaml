@@ -1,17 +1,16 @@
 name: 23_Environments
 on:
   workflow_dispatch:
+    # 手動実行する際のパラメーター
     inputs:
-      environment:
-        # typeがenvironmentだと、存在する環境セットしか出てこなくなる。
-        type: environment
-        description: env
-        required: true
-        default: test
       greeting:
+        # 型
         type: string
+        # デフォルト値 (入力されてる値を消して実行してもこの値が入っていた)
         default: Hello
+        # 必須フラグ (デフォルト指定して、これ指定する意味あるんか？)
         required: true
+        # 説明
         description: A cheerful word
 jobs:
   run:
