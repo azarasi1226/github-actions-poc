@@ -1,0 +1,13 @@
+name: 17_Concurrency2
+on: push
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  #　この設定をtrueにすると、先に動き出したワークフローが終了し、後続のワークフローが優先される。
+  # プルリクエストなどで最新の状態だけCIしたい場合がほとんどだと思うので、有効な設定
+  cancel-in-progress: true
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 120
+      - run: echo "Concurrencyの確認"
