@@ -22,4 +22,4 @@ jobs:
           name: date-file
           path: ./downloaded
       - name: ファイル内容の表示
-        run: cat date.txt
+        run: cat ./downloaded/date.txt
