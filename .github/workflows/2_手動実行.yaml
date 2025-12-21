@@ -10,7 +10,7 @@ on:
         # デフォルト値 (入力されてる値を消して実行してもこの値が入っていた)
         default: Hello
         # 必須フラグ (デフォルト指定して、これ指定する意味あるんか？)
-        requiredc: true
+        required: true
         # 説明
         description: A cheerful word
 jobs:
