@@ -8,6 +8,11 @@ on:
         description: env
         required: true
         default: test
+      greeting:
+        type: string
+        default: Hello
+        required: true
+        description: A cheerful word
 jobs:
   run:
     runs-on: ubuntu-latest
