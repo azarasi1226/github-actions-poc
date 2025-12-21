@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sleep 120
-      - run: echo "Concurrencyの確認"
+      - run: echo "Concurrencyの確認" 
