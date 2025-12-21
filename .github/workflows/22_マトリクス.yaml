@@ -1,0 +1,14 @@
+name: 22_マトリクス
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        #　ここで定義した配列の要素数分ジョブが並列で実行される
+        node-version: [14, 16, 18]
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          # matrixで定義した値を参照するにはこう書く
+          node-version: ${{ matrix.node-version }}

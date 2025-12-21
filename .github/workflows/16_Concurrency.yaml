@@ -1,0 +1,11 @@
+name: 16_Concurrency
+on: push
+# 先に動き出したワークフローが完了するまで二つ目のワークフローは待機する。
+#　ワークフロー名 + ブランチ名で管理すれば、プルリクエストとかの単位で管理できるのでおすすめらしい。
+concurrency: ${{github.workflow}}-${{github.ref}}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 120
+      - run: echo "Concurrencyの確認"

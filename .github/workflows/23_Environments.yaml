@@ -1,5 +1,4 @@
-name: 2_手動実行
-# ONの下にworkflow_dispatchを指定すると手動実行
+name: 23_Environments
 on:
   workflow_dispatch:
     # 手動実行する際のパラメーター
@@ -16,5 +15,11 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    # 環境の切り替えはここで行う
+    environment: ${{inputs.environment}}
+    env:
+      USERNAME: ${{vars.USERNAME}}
+      PASSWORD: ${{secrets.PASSWORD}}
     steps:
-    - run: echo "${{inputs.greeting}}"
+      - run: echo "userName- ${USERNAME}"
+      - run: echo "password- ${PASSWORD}"

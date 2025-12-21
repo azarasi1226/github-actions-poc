@@ -1,0 +1,17 @@
+name: 18_ロググループ・ログマスク
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ロググループの確認
+        run: |
+          echo "::group::=== ロググループ開始 ==="
+          echo "これはロググループ内のログです"
+          printenv
+          echo "::endgroup::"
+      - name: ログマスクの確認
+        env: 
+          PASSWORD: "パスワードよ～ん"
+        run: echo "::add-mask::${PASSWORD}"
+      - run: echo "マジすか？ パスワードは ${PASSWORD} だよ"

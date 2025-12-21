@@ -1,0 +1,24 @@
+name: 20_ジョブの依存関係
+on: push
+jobs:
+  # firstとsecoundは並列で実行される
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "最初のジョブです"
+  second:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "firstジョブの後に実行されます"]
+  # thirdはfirstとsecoundの後に実行
+  third:
+    needs: [first, second]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "firstとsecondジョブの後に実行されます"
+  # 最後に実行される
+  fourth:
+    needs: [third]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "thirdジョブの後に実行されます"

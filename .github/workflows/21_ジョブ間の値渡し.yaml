@@ -1,0 +1,15 @@
+name: 21_ジョブ間の値渡し
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - id: set_output
+        run: echo "kekka=ジョブ1からのデータだよ" >> "${GITHUB_OUTPUT}"
+    outputs:
+      kekka: ${{steps.set_output.outputs.kekka}}
+  job2:
+    runs-on: ubuntu-latest
+    needs: [job1]
+    steps:
+      - run: echo "ジョブ1から渡された値は${{needs.job1.outputs.kekka}}です"

@@ -1,0 +1,20 @@
+name: 15_GithubAPIの権限
+on: pull_request
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    # permissions: read-all, write-all みたいな一括指定方法もある。
+    permissions:
+      #プルリクエストへの書き込みを許可
+      pull-requests: write
+      # ソースコードの読み取りを許可 (ちなみに、権限が設定されてない場合は、デフォルトでonとなっているらしい)
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      # AWSコマンドでも環境変数にトークン入れるのあったよね。あの感覚
+      # secrets.GITHUB_TOKENの中には↑で設定した権限のトークンが入っている。そしてこの期限はワークフローの実行中のみ有効
+      - env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        # HEAD_REFはブランチ名
+        run: gh pr comment ${GITHUB_HEAD_REF} --body "Hellow, ${GITHUB_ACTOR}"
+

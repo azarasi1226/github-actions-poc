@@ -1,0 +1,21 @@
+name: 19_レポーティング
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      # 警告・エラー・通知の出力
+      - run: echo "::error::これはエラーだよ１"
+      - run: echo "::warning::これは警告だよ１"
+      - run: echo "::notice::これは通知だよ１"
+      - run: echo "::error::マジすか"
+      - run: echo "::warning::やばいっす"
+      - run: echo "::notice::いや..."
+  run2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | # マークダウンによる出力
+          echo "## ExampleTitle :rocket:" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
+
