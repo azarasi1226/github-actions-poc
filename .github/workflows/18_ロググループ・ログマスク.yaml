@@ -6,13 +6,10 @@ jobs:
     steps:
       - name: ロググループの確認
         run: |
-          echo "=== ロググループ開始 ==="
+          echo "::group::=== ロググループ開始 ==="
           echo "これはロググループ内のログです"
           printenv
-          echo "=== ロググループ終了 ==="
-        # ロググループ化
-        log-group: ロググループ名
-
+          echo "::endgroup::"
       - name: ログマスクの確認
         env: 
           PASSWORD: "パスワードよ～ん"
