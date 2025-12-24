@@ -8,18 +8,21 @@ inputs:
     description: コンテキストをログに出力するか
 outputs:
   dumped-date:
-  value: ${{steps.current.outputs.date}}
-  description: ダンプ実行日付
+    value: ${{steps.current.outputs.date}}
+    description: ダンプ実行日付
 runs:
   using: composite
   steps:
-    - run: printenv | sort
-      shell: bash
-    - run: echo "${CONTEXT}
-      shell: bash
+    - shell: bash
+      run: printenv | sort
+
+    - shell: bash
+      run: echo "${CONTEXT}
       if: ${{inputs.enable-context == true}}
       env:
         CONTEXT: ${{toJSON(github)}}
+        
     - id: current
-    run: echo "date=$(date --utc +'%Y-%m-%dT%H:%M:%SZ')" >> "${GITHUB_OUTPUT}"
       shell: bash
+      run: echo "date=$(date --utc +'%Y-%m-%dT%H:%M:%SZ')" >> "${GITHUB_OUTPUT}"
+
