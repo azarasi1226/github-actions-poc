@@ -1,3 +1,4 @@
+# アーティファクトは同一のワークフロー内でしか受け渡しできない
 name: 24_アーティファクト
 on: push
 jobs:
@@ -5,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ファイル作成
-        run: date > date.txt
+        run: date > date.txt5
       - name: アーティファクトのアップロード
         uses: actions/upload-artifact@v4
         with:
