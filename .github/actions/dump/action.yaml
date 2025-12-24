@@ -4,7 +4,7 @@ description: |
   ワークフローのデバッグに便利です。
 inputs:
   enable-context:
-    default: true
+    default: 'true' #stringしか渡せないぽい
     description: コンテキストをログに出力するか
 outputs:
   dumped-date:
@@ -21,7 +21,7 @@ runs:
       if: ${{inputs.enable-context == true}}
       env:
         CONTEXT: ${{toJSON(github)}}
-        
+
     - id: current
       shell: bash
       run: echo "date=$(date --utc +'%Y-%m-%dT%H:%M:%SZ')" >> "${GITHUB_OUTPUT}"
